@@ -1,0 +1,308 @@
+/*  Global Styles  */
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 16px;
+	position: relative;
+}
+html {
+	background: black;
+}
+body {
+	width: 100%;
+	height: 100%;
+	min-width: 1200px;
+	min-height: 575px;
+}
+body * {
+	opacity: 0;
+}
+a {
+	text-decoration: none;
+}
+
+
+/*  General properties  */
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.h-center {
+	text-align: center;
+}
+.h-center > * {
+	display: inline-block;
+}
+.v-center > * {
+	top: 50%;
+}
+
+
+/*  Section Styles  */
+#main-bg {
+	position: absolute;
+	top: 0px;
+	left:0px;
+	height: 100%;
+	width: 100%;
+}
+.header {
+	height: 25%;
+	width: 100%;
+	min-height: 100px;
+}
+.content {
+	min-height: 400px;
+	height: 65%;
+	width: 100%;
+	overflow: hidden;
+}
+.footer {
+	position: fixed;
+	bottom: 0px;
+	height: 10%;
+	width: 100%;
+	min-height: 20px;
+}
+.footer-placeholder {
+	height: 7%;
+	width: 100%;
+	min-height: 20px;
+}
+#quote {
+	font-size: 200%;
+}
+
+
+
+/*  Header Classes  */
+.header-container {
+	width: 50%;
+	height: 100%;
+}
+#nav-container {
+	width: 100%;
+	height: 40%;
+}
+#name {
+	width: 100%;
+	font-family:"Trebuchet MS", Helvetica, sans-serif; 
+	height:60%;
+	color: white;
+	letter-spacing: -1px;
+}
+#name span {
+	float:right;
+	font-size: 300%;
+}
+
+
+
+
+/*  Nav Styles  */
+.nav-bar {
+	width: 50%;
+	height: 100%;
+}
+.nav-bar-row {
+	width: 100%;
+	height: 50%;
+}
+.nav-btn {
+	height:100%;
+	width:50%;
+	color: white;
+	font-family: 'helvetica';
+	float: left;
+}
+.nav-btn > a {
+	color: white;
+	text-decoration: none;
+	border-bottom: 2px solid blue;
+}
+.nav-btn > a:hover {
+	color: blue;
+	border-bottom: 2px solid white;
+}
+.contact-container {
+	width: 50%;
+	height: 100%;
+}
+.contact-list {
+	height: 100%;
+	width: 100%;
+}
+.contact-list li {
+	display: inline;
+	list-style-type: none;
+	float: right;
+	max-height: 100%;
+}
+.contact-icon {
+	max-height: 100%;
+}
+.contact-icon {
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+.contact-icon:hover {
+	-webkit-filter: grayscale(0%);
+	-moz-filter: grayscale(0%);
+	-o-filter: grayscale(0%);
+	-ms-filter: grayscale(0%);
+	filter: grayscale(0%);
+}
+
+
+
+/*  Content Cards  */
+.card {
+	position: absolute;
+	height: 20%;
+	width: 30%;
+	color: black;
+}
+.card-display {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;			
+	height: 100%;
+	opacity: 0;
+	overflow: auto;
+}
+.card-preview {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 97%;
+	opacity: 1;
+}
+.tab-image {
+	max-height: 100%;
+	max-width: 100%;
+}
+.tab-image {
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+.tab-image:hover {
+	-webkit-filter: grayscale(0%);
+	-moz-filter: grayscale(0%);
+	-o-filter: grayscale(0%);
+	-ms-filter: grayscale(0%);
+	filter: grayscale(0%);
+}
+
+
+
+
+/*  Image Slideshow  */
+.slideshow {
+	position: relative;
+}
+.slideshow-image {
+	position: absolute;
+	left: 0px;
+	top:0px;
+	max-height:100%;
+	opacity: 0;
+}
+
+
+/* image stylings */
+.bg-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index:-5;
+}
+
+
+/*  ID Specific Styles  */
+#quote {
+	color: white;
+}
+#left-header {
+	width: 40%;
+	height: 100%;
+}
+#right-header {
+	width: 60%;
+	height: 100%;
+}
+#picture {
+	overflow-y: visible;
+	overflow-x: hidden;
+	height: 150%;
+	width: 100%;
+}
+
+
+
+/* Background Image Links */
+.source-ref {
+	position: fixed;
+	bottom: 0px;
+	font-size:10px;
+	color:#686868;
+	font-style: italic;
+}
+.source-link {
+	color:#686868;
+	font-style: italic;
+}
+
+
+/*  Z-Index   */
+
+
+/* Sections */
+#main-bg {
+	z-index: 0;
+}
+.content {
+	z-index: 1;
+}
+.header {
+	z-index: 2;
+}
+.footer {
+	z-index: 3;
+}
+.footer-placeholder {
+	z-index: -1;
+}
+
+
+/* Cards */
+.card-spot-1 {
+	z-index: 2;
+}
+.card-spot-2 {
+	z-index: 4;
+}
+.card-spot-3 {
+	z-index: 6;
+}
+.card-preview {
+	z-index: 3;
+}
+.card-display {
+	z-index: 2;
+}
+.active {
+	z-index: 9;
+}
+
+
+
