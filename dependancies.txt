@@ -1,0 +1,11 @@
+django
+django-extensions
+south
+django-dajaxice
+django-grappelli
+django-filebrowser
+django-tinymce
+
+
+
+

@@ -86,6 +86,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+	'dajaxice.finders.DajaxiceFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -202,10 +203,6 @@ TINYMCE_DEFAULT_CONFIG = {
 
 BACKEND = "django.core.cache.backends.memcached.MemcachedCache"
 
-STATICFILES_FINDERS = ("django.contrib.staticfiles.finders.FileSystemFinder",
-	"django.contrib.staticfiles.finders.AppDirectoriesFinder",
-	"dajaxice.finders.DajaxiceFinder"
-)
 
 TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
 	"django.core.context_processors.debug",

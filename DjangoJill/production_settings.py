@@ -18,8 +18,8 @@ finally:
 DEBUG = TEMPLATE_DEBUG = False
 
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
-DATABASES['default']['NAME'] = ''
-DATABASES['default']['USER'] = ''
+DATABASES['default']['NAME'] = 'jill_db'
+DATABASES['default']['USER'] = 'jill_db_user'
 try:
 	DATABASES['default']['PASSWORD'] = password['db']
 except:
@@ -28,8 +28,8 @@ except:
 
 ALLOWED_HOSTS = []
 
-STATIC_URL = ''
-STATIC_ROOT = ''
+STATIC_URL = 'http://jillian.joeyuan.com/static/'
+STATIC_ROOT = '/home/joeyuan19/webapps/jill_static/'
 STATICFILES_DIRS += (
 	'',
 )

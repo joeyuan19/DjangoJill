@@ -6,11 +6,9 @@ from dajaxice.core import dajaxice_functions
 from activity_posting.models import RecentActivityPost
 
 def home_view(request):
-	posts = RecentActivityPost.objects.all()
-	more_posts = len(posts) > 10
-	print more_posts
-	posts = posts[:10:-1]
-	print posts
+	posts      = RecentActivityPost.objects.all()
+	more_posts = 10 < len(posts)
+	posts      = posts[::-1]
 	return render_to_response('index.html',
 		{'posts':posts,'more_posts':more_posts},
 		context_instance=RequestContext(request)

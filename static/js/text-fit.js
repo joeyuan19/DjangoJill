@@ -1,11 +1,13 @@
 function resizeFont() {
-	$('.text-fit').scaleFont();
+	$('.text-fit').each(function() {
+		$(this).scaleFont();
+	});
 }
 
 $.fn.scaleFont = function(){
 	var elm_parent = $(this).parent();
 	var height = elm_parent.height();
-	$(this).css('font-size',height*.85 + 'px');
+	$(this).css('font-size',height*.9 + 'px');
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * 

@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load dajaxice_templatetags %}
 <html lang='en'>
 	<head>
 		<title>Jillian Entenman</title>
@@ -6,11 +7,13 @@
 		<meta name="keywords" content="Jillian, Entenman, Jillian Entenman, Acting, Directing, Production, Writing">
         <meta name="description" content="Jillian Entenman, an actress, writer, director, and producer from Chicago, living now in New York City">
 		<script type="text/javascript" src="{% static "js/jquery-1.10.2.min.js" %}"></script>
+		{% dajaxice_js_import %}
 		<script type="text/javascript" src="{% static "js/content-cycle-hor.js" %}"></script>
 		<script type="text/javascript" src="{% static "js/image-slideshow.js" %}"></script>
 		<script type="text/javascript" src="{% static "js/text-fit.js" %}"></script>
 		<script type="text/javascript" src="{% static "js/init.js" %}"></script>
 		<script type="text/javascript" src="{% static "js/fade-in.js" %}"></script>
+		<script type="text/javascript" src="{% static "js/resize.js" %}"></script>
 		<link href="/static/css/style_sheet.css" rel="stylesheet" media="all" />
 	</head>
 	<body>
@@ -32,7 +35,7 @@
 					<div class='nav-bar left'>
 						<div class='nav-bar-row'>
 							<div class='nav-btn h-center'>
-								<a href='templates/resume.html'><span>Resume</span></a>
+								<a href='templates/resume.html'><span class='text-fit'>Resume</span></a>
 							</div>
 							<div class='nav-btn h-center'>
 								<a href='templates/video.html'><span>Video</span></a>
@@ -48,36 +51,48 @@
 						</div>
 					</div><!-- /nav-bar -->
 					<div class='contact-container right'>
-						<ul class='right contact-list'>
+						<ul id='contact-list' class='right contact-list'>
 							<li class="contact-list-item">
-								<a id="ig" class="contact-item-link" href="http://instagram.com/jillibrown" target="_newtab">
-									<img id="ig-icon" alt="Instagram" title="Instagram" class="contact-icon" src="{% static "img/social_icons/ig-icon.png" %}"/>
-								</a>
+								<span>
+									<a id="ig" class="contact-item-link" href="http://instagram.com/jillibrown" target="_newtab">
+										<img id="ig-icon" class="icon-image" alt="Instagram" title="Instagram" class="contact-icon" src="{% static "img/social_icons/ig-icon.png" %}"/>
+									</a>
+								</span>
 							</li>
 							<li class="contact-list-item">
-								<a id="fb" class="contact-item-link" href="https://www.facebook.com/jillian.entenman" target="_newtab">
-									<img id="fb-icon" class="contact-icon" alt="facebook" title="facebook" src="{% static "img/social_icons/fb-icon.png" %}"/>
-								</a>
+								<span>
+									<a id="fb" class="contact-item-link" href="https://www.facebook.com/jillian.entenman" target="_newtab">
+										<img id="fb-icon" class="icon-image" alt="facebook" title="facebook" src="{% static "img/social_icons/fb-icon.png" %}"/>
+									</a>
+								</span>
 							</li>
 							<li class="contact-list-item">
-								<a id="tw" class="contact-item-link" href="https://twitter.com/jillibrown" target="_newtab">
-									<img id="tw-icon" alt="Twitter" title="Twitter" class="contact-icon" src="{% static "img/social_icons/tw-icon.png" %}"/>
-								</a>
+								<span>
+									<a id="tw" class="contact-item-link" href="https://twitter.com/jillibrown" target="_newtab">
+										<img id="tw-icon" class="icon-image" alt="Twitter" title="Twitter" class="contact-icon" src="{% static "img/social_icons/tw-icon.png" %}"/>
+									</a>
+								</span>
 							</li>
 							<li class="contact-list-item">
-								<a id="bs" class="contact-item-link" href="https://www.backstage.com/jillianentenman/" target="_newtab">
-									<img id="bs-icon" alt="Backstage" title="Backstage" class="contact-icon" src="{% static "img/social_icons/bs-icon.png" %}"/>
-								</a>
+								<span>
+									<a id="bs" class="contact-item-link" href="https://www.backstage.com/jillianentenman/" target="_newtab">
+										<img id="bs-icon" class="icon-image" alt="Backstage" title="Backstage" class="contact-icon" src="{% static "img/social_icons/bs-icon.png" %}"/>
+									</a>
+								</span>
 							</li>
 							<li class="contact-list-item">
-								<a id="phone" class="contact-item-link" onclick="sneaky_phone()" target="_newtab">
-									<img id="phone-icon" alt="Phone" title="Photo" class="contact-icon" src="{% static "img/social_icons/phone-icon.png" %}"/>
-								</a>
+								<span>
+									<a id="phone" class="contact-item-link" target="_newtab">
+										<img id="phone-icon" class="icon-image" alt="Phone" title="Photo" class="contact-icon" src="{% static "img/social_icons/phone-icon.png" %}"/>
+									</a>
+								</span>
 							</li>
 							<li class="contact-list-item">
-								<a id="email" class="contact-item-link" onclick="sneaky_mail();" target="_newtab">
-									<img id="mail-icon" alt="Email" title="Email" class="contact-icon" src="{% static "img/social_icons/mail-icon.png" %}"/>
-								</a>
+								<span>
+									<a id="email" class="contact-item-link" target="_newtab">
+										<img id="mail-icon" class="icon-image" alt="Email" title="Email" class="contact-icon" src="{% static "img/social_icons/mail-icon.png" %}"/>
+									</a>
+								</span>
 							</li>
 						</ul><!-- /contact-list -->
 					</div><!-- /contact -->
@@ -202,10 +217,16 @@
 							<p class='post-content'>
 								{{ post.content|safe }}
 							</p>
+							<h1>
+								{{ post.date }}
+							</h1>
 						</div>
 					{% endfor %}
 					</div>
 					{% if more_posts %}
+						<button id='load button'>
+							Load more posts....
+						</button>
 					{% endif %}
 				</div>
 			</div>
@@ -213,7 +234,7 @@
 		<div class='footer-placeholder'></div>
 		<div class='footer h-center'>
 			<div id='quote'>
-				<h1>~ ~ ~ Quote ~ ~ ~</h1>
+				<h1><span id='quote-text'>~ ~ ~ ~ ~ "This Is Where Your Quote can go" ~ ~ ~ ~ ~</span></h1>
 			</div>
 		</div>
 	</body>

@@ -34,7 +34,7 @@ function init_UI() {
 			set_new_card('audio')
 			});
 	$("#email").click(thisFunctionWillEmailMe);
-	$("#phone").click(thisFunctionWillCallMe);
+	$("#phon").click(thisFunctionWillCallMe);
 }
 
 
