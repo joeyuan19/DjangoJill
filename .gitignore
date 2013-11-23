@@ -1,4 +1,4 @@
-DjangoJill/extras/*
+extras/*
 assets/*
 media/uploads/*
 static/mov/*
