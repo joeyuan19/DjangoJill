@@ -175,12 +175,12 @@ a {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 100%;			
+	width: 95%;			
 	height: 92%;
 	opacity: 0;
 	overflow: auto;
 	margin-top: 5px;
-	margin-bottom: 50px;
+	margin-: 50px;
 	margin-right: 5px;
 }
 .card-display {

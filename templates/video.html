@@ -1,4 +1,14 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block 'header_styles' %}
+	<link href="/static/css/style_sheet.css" rel="stylesheet" media="all" />
+{% endblock %}
+
+{% block 'header_scripts' %}
+	<script type="text/javascript" src="{% static "js/fade-in.js" %}"></script>
+{% endblock %}
 
 {% block 'content' %}
 	<img id='main-bg' class='bg-image' src='http://imgsrc.hubblesite.org/hu/db/images/hs-2009-25-b-xlarge_web.jpg' alt='NGC 6302' /><span class='source-ref'>Source: <a class='source-link' href='http://hubblesite.org'>Hubblesite.org</a></span>

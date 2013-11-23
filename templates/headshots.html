@@ -1,4 +1,13 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block 'header_styles' %}
+	<link href="/static/css/style_sheet.css" rel="stylesheet" media="all" />
+{% endblock %}
+
+{% block 'header_scripts' %}
+	<script type="text/javascript" src="{% static "js/fade-in.js" %}"></script>
+{% endblock %}
 
 {% block 'content' %}
 	<img style='position: absolute; top: 0px; left: 0px;' src='http://imgsrc.hubblesite.org/hu/db/images/hs-2012-49-a-xlarge_web.jpg' alt='A Cosmic Holiday Ornament, Hubble-Style' /><span class='source-ref'>Source: <a class='source-link' href='http://hubblesite.org'>Hubblesite.org</a></span>
