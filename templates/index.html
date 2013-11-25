@@ -1,242 +1,244 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
 {% load dajaxice_templatetags %}
-<html lang='en'>
-	<head>
-		<title>Jillian Entenman</title>
-		<meta name="viewport" content="width=device-width initial-scale=1.0">
-		<meta name="keywords" content="Jillian, Entenman, Jillian Entenman, Acting, Directing, Production, Writing">
-        <meta name="description" content="Jillian Entenman, an actress, writer, director, and producer from Chicago, living now in New York City">
-		<script type="text/javascript" src="{% static "js/jquery-1.10.2.min.js" %}"></script>
-		{% dajaxice_js_import %}
+
+{% block 'header_scripts' %}	
+	{% dajaxice_js_import %}
 		<script type="text/javascript" src="{% static "js/content-cycle-hor.js" %}"></script>
 		<script type="text/javascript" src="{% static "js/image-slideshow.js" %}"></script>
 		<script type="text/javascript" src="{% static "js/text-fit.js" %}"></script>
 		<script type="text/javascript" src="{% static "js/init.js" %}"></script>
 		<script type="text/javascript" src="{% static "js/fade-in.js" %}"></script>
 		<script type="text/javascript" src="{% static "js/resize.js" %}"></script>
-		<link href="/static/css/style_sheet.css" rel="stylesheet" media="all" />
-	</head>
-	<body>
-		<img id='main-bg' class='bg-image' src='http://imgsrc.hubblesite.org/hu/db/images/hs-2006-01-q-xlarge_web.jpg' alt='Spitzer and Hubble Create Colorful Masterpiece' /><span class='source-ref'>Source: <a class='source-link' href='http://hubblesite.org'>Hubblesite.org</a></span>
-		<div class='header'>
-			<div id='left-header' class='header-container left'>
-				<div id='picture' class='slideshow'>
-					<img id="img1" class='slideshow-image no-fade-in' src="{% static "img/headshot/img1.png" %}"/>
-					<img id="img2" class='slideshow-image no-fade-in' src="{% static "img/headshot/img2.png" %}"/>
-					<img id="img3" class='slideshow-image no-fade-in' src="{% static "img/headshot/img3.png" %}"/>
-					<img id="img4" class='slideshow-image no-fade-in' src="{% static "img/headshot/img4.png" %}"/>
-				</div>
-			</div><!-- left-header -->
-			<div id='right-header' class='header-container right'>
-				<div id='name' class='name'>
-					<span class='text-fit'>Jillian&nbsp;Entenman</span>
-				</div>
-				<div id='nav-container'>
-					<div class='nav-bar left'>
-						<div class='nav-bar-row'>
-							<div class='nav-btn h-center'>
-								<a href='{% url 'resume' %}'><span class='text-fit'>Resume</span></a>
-							</div>
-							<div class='nav-btn h-center'>
-								<a href='{% url 'video' %}'><span>Video</span></a>
-							</div>
-						</div>
-						<div class='nav-bar-row'>
-							<div class='nav-btn h-center'>
-								<a href='{% url 'headshots' %}'><span>Headshots</span></a>
-							</div>
-							<div class='nav-btn h-center'>
-								<a href='{% url 'production' %}'><span>Production&nbsp;Photos</span></a>
-							</div>
-						</div>
-					</div><!-- /nav-bar -->
-					<div class='contact-container right'>
-						<ul id='contact-list' class='right contact-list'>
-							<li class="contact-list-item">
-								<span>
-									<a id="ig" class="contact-item-link" href="http://instagram.com/jillibrown" target="_newtab">
-										<img id="ig-icon" class="icon-image" alt="Instagram" title="Instagram" class="contact-icon" src="{% static "img/social_icons/ig-icon.png" %}"/>
-									</a>
-								</span>
-							</li>
-							<li class="contact-list-item">
-								<span>
-									<a id="fb" class="contact-item-link" href="https://www.facebook.com/jillian.entenman" target="_newtab">
-										<img id="fb-icon" class="icon-image" alt="facebook" title="facebook" src="{% static "img/social_icons/fb-icon.png" %}"/>
-									</a>
-								</span>
-							</li>
-							<li class="contact-list-item">
-								<span>
-									<a id="tw" class="contact-item-link" href="https://twitter.com/jillibrown" target="_newtab">
-										<img id="tw-icon" class="icon-image" alt="Twitter" title="Twitter" class="contact-icon" src="{% static "img/social_icons/tw-icon.png" %}"/>
-									</a>
-								</span>
-							</li>
-							<li class="contact-list-item">
-								<span>
-									<a id="bs" class="contact-item-link" href="https://www.backstage.com/jillianentenman/" target="_newtab">
-										<img id="bs-icon" class="icon-image" alt="Backstage" title="Backstage" class="contact-icon" src="{% static "img/social_icons/bs-icon.png" %}"/>
-									</a>
-								</span>
-							</li>
-							<li class="contact-list-item">
-								<span>
-									<a id="phone" class="contact-item-link" target="_newtab">
-										<img id="phone-icon" class="icon-image" alt="Phone" title="Photo" class="contact-icon" src="{% static "img/social_icons/phone-icon.png" %}"/>
-									</a>
-								</span>
-							</li>
-							<li class="contact-list-item">
-								<span>
-									<a id="email" class="contact-item-link" target="_newtab">
-										<img id="mail-icon" class="icon-image" alt="Email" title="Email" class="contact-icon" src="{% static "img/social_icons/mail-icon.png" %}"/>
-									</a>
-								</span>
-							</li>
-						</ul><!-- /contact-list -->
-					</div><!-- /contact -->
-				</div><!-- /nav-container -->
-			</div><!-- /right-header -->
-		</div><!-- header -->
-		<div class='content'>
-			<div id='writing' class='card card-spot-1'>
-				<div class='card-preview'>
-					<img class='tab-image' src='{% static 'img/tab/writing.png' %}'/>
-				</div>
-				<div class='card-display no-fade-in'>
-					<h1 class='h-center'><span>Title For Writing Sample Here</span></h1>
-					<p style='text-align: center;'>
-						What I can do can do no hurt to try,<br>
-						Since you set up your rest 'gainst remedy.<br>
-						He that of greatest works is finisher<br>
-						Oft does them by the weakest minister:<br>
-						So holy writ in babes hath judgment shown,<br>
-						When judges have been babes; great floods have flown<br>
-						From simple sources, and great seas have dried<br>
-						When miracles have by the greatest been denied.<br>
-						Oft expectation fails and most oft there<br>
-						Where most it promises, and oft it hits<br>
-						What I can do can do no hurt to try,<br>
-						Since you set up your rest 'gainst remedy.<br>
-						He that of greatest works is finisher<br>
-						Oft does them by the weakest minister:<br>
-						So holy writ in babes hath judgment shown,<br>
-						When judges have been babes; great floods have flown<br>
-						From simple sources, and great seas have dried<br>
-						When miracles have by the greatest been denied.<br>
-						Oft expectation fails and most oft there<br>
-						Where most it promises, and oft it hits<br>
-						What I can do can do no hurt to try,<br>
-						Since you set up your rest 'gainst remedy.<br>
-						He that of greatest works is finisher<br>
-						Oft does them by the weakest minister:<br>
-						So holy writ in babes hath judgment shown,<br>
-						When judges have been babes; great floods have flown<br>
-						From simple sources, and great seas have dried<br>
-						When miracles have by the greatest been denied.<br>
-						Oft expectation fails and most oft there<br>
-						Where most it promises, and oft it hits<br>
-						What I can do can do no hurt to try,<br>
-						Since you set up your rest 'gainst remedy.<br>
-						He that of greatest works is finisher<br>
-						Oft does them by the weakest minister:<br>
-						So holy writ in babes hath judgment shown,<br>
-						When judges have been babes; great floods have flown<br>
-						From simple sources, and great seas have dried<br>
-						When miracles have by the greatest been denied.<br>
-						Oft expectation fails and most oft there<br>
-						Where most it promises, and oft it hits<br>
-						What I can do can do no hurt to try,<br>
-						Since you set up your rest 'gainst remedy.<br>
-						He that of greatest works is finisher<br>
-						Oft does them by the weakest minister:<br>
-						So holy writ in babes hath judgment shown,<br>
-						When judges have been babes; great floods have flown<br>
-						From simple sources, and great seas have dried<br>
-						When miracles have by the greatest been denied.<br>
-						Oft expectation fails and most oft there<br>
-						Where most it promises, and oft it hits<br>
-						What I can do can do no hurt to try,<br>
-						Since you set up your rest 'gainst remedy.<br>
-						He that of greatest works is finisher<br>
-						Oft does them by the weakest minister:<br>
-						So holy writ in babes hath judgment shown,<br>
-						When judges have been babes; great floods have flown<br>
-						From simple sources, and great seas have dried<br>
-						When miracles have by the greatest been denied.<br>
-						Oft expectation fails and most oft there<br>
-						Where most it promises, and oft it hits<br>
-						What I can do can do no hurt to try,<br>
-						Since you set up your rest 'gainst remedy.<br>
-						He that of greatest works is finisher<br>
-						Oft does them by the weakest minister:<br>
-						So holy writ in babes hath judgment shown,<br>
-						When judges have been babes; great floods have flown<br>
-						From simple sources, and great seas have dried<br>
-						When miracles have by the greatest been denied.<br>
-						Oft expectation fails and most oft there<br>
-						Where most it promises, and oft it hits<br>
-					</p>
-				</div>
-			</div>
-			<div id='about' class='card card-spot-2'>
-				<div class='card-preview'>
-					<img class='tab-image' src='{% static 'img/tab/about.png' %}'/>
-				</div>
-				<div class='card-display no-fade-in'>
-					<h1>About Me Video Display</h1>
-				</div>
-			</div>
-			<div id='audio' class='card card-spot-3'>
-				<div class='card-preview'>
-					<img class='tab-image' src='{% static 'img/tab/audio.png' %}'/>
-				</div>
-				<div class='card-display no-fade-in v-center'>
-					<div class='h-center'>
-						<audio id='audio-player' controls>
-							<source src="{% static "audio/3_11_04_PM.mp3" %}" type="audio/mpeg">
-							<source src="{% static "audio/3_11_04_PM.ogg" %}" type="audio/ogg">
-							<embed height="50" width="100" src="{% static "audio/3_11_04_PM.mp3" %}">
-						</audio>
-					</div>
-				</div>
-			</div>
-			<div id='latest' class='card active'>
-				<div class='card-preview'>
-					<img class='tab-image' src='{% static 'img/tab/recent.png' %}'/>
-				</div>
-				<div class='card-display no-fade-in'>
-					<h1>Latest Activity Display</h1>
-					<div class='posts-container'>
-					{% for post in posts %}
-						<div class='post'>
-							<h3 class='post-title'>
-								{{ post.title }}
-							</h3>
-							<p class='post-content'>
-								{{ post.content|safe }}
-							</p>
-							<h1>
-								{{ post.date }}
-							</h1>
-						</div>
-					{% endfor %}
-					</div>
-					{% if more_posts %}
-						<button id='load button'>
-							Load more posts....
-						</button>
-					{% endif %}
-				</div>
-			</div>
-		</div><!-- /content -->
-		<div class='footer-placeholder'></div>
-		<div class='footer h-center'>
-			<div id='quote'>
-				<h1><span id='quote-text'>~ ~ ~ ~ ~ "This Is Where Your Quote can go" ~ ~ ~ ~ ~</span></h1>
-			</div>
-		</div>
-	</body>
-</html>
+{% endblock %}
 
+{% block 'header_styles' %}		
+	<link href="/static/css/style_sheet.css" rel="stylesheet" media="all" />
+{% endblock %}
+
+{% block 'content' %}
+		<img id='main-bg' class='bg-image' src='http://imgsrc.hubblesite.org/hu/db/images/hs-2006-01-q-xlarge_web.jpg' alt='Spitzer and Hubble Create Colorful Masterpiece' /><span class='source-ref'>Source: <a class='source-link' href='http://hubblesite.org'>Hubblesite.org</a></span>
+		<div class='page'>
+			<div class='header'>
+				<div id='left-header' class='header-container left'>
+					<div id='picture' class='slideshow'>
+						<img id="img1" class='slideshow-image no-fade-in' src="{% static "img/headshot/img1.png" %}"/>
+						<img id="img2" class='slideshow-image no-fade-in' src="{% static "img/headshot/img2.png" %}"/>
+						<img id="img3" class='slideshow-image no-fade-in' src="{% static "img/headshot/img3.png" %}"/>
+						<img id="img4" class='slideshow-image no-fade-in' src="{% static "img/headshot/img4.png" %}"/>
+					</div>
+				</div><!-- left-header -->
+				<div id='right-header' class='header-container right'>
+					<div id='name' class='name'>
+						<span class='text-fit'>Jillian&nbsp;Entenman</span>
+					</div>
+					<div id='nav-container'>
+						<div class='nav-bar left'>
+							<div class='nav-bar-row'>
+								<div class='nav-btn h-center'>
+									<a href='{% url 'resume' %}'><span class='text-fit'>Resume</span></a>
+								</div>
+								<div class='nav-btn h-center'>
+									<a href='{% url 'video' %}'><span>Video</span></a>
+								</div>
+							</div>
+							<div class='nav-bar-row'>
+								<div class='nav-btn h-center'>
+									<a href='{% url 'headshots' %}'><span>Headshots</span></a>
+								</div>
+								<div class='nav-btn h-center'>
+									<a href='{% url 'production' %}'><span>Production&nbsp;Photos</span></a>
+								</div>
+							</div>
+						</div><!-- /nav-bar -->
+						<div class='contact-container right'>
+							<ul id='contact-list' class='right contact-list'>
+								<li class="contact-list-item">
+									<span>
+										<a id="ig" class="contact-item-link" href="http://instagram.com/jillibrown" target="_newtab">
+											<img id="ig-icon" class="icon-image" alt="Instagram" title="Instagram" class="contact-icon" src="{% static "img/social_icons/ig-icon.png" %}"/>
+										</a>
+									</span>
+								</li>
+								<li class="contact-list-item">
+									<span>
+										<a id="fb" class="contact-item-link" href="https://www.facebook.com/jillian.entenman" target="_newtab">
+											<img id="fb-icon" class="icon-image" alt="facebook" title="facebook" src="{% static "img/social_icons/fb-icon.png" %}"/>
+										</a>
+									</span>
+								</li>
+								<li class="contact-list-item">
+									<span>
+										<a id="tw" class="contact-item-link" href="https://twitter.com/jillibrown" target="_newtab">
+											<img id="tw-icon" class="icon-image" alt="Twitter" title="Twitter" class="contact-icon" src="{% static "img/social_icons/tw-icon.png" %}"/>
+										</a>
+									</span>
+								</li>
+								<li class="contact-list-item">
+									<span>
+										<a id="bs" class="contact-item-link" href="https://www.backstage.com/jillianentenman/" target="_newtab">
+											<img id="bs-icon" class="icon-image" alt="Backstage" title="Backstage" class="contact-icon" src="{% static "img/social_icons/bs-icon.png" %}"/>
+										</a>
+									</span>
+								</li>
+								<li class="contact-list-item">
+									<span>
+										<a id="phone" class="contact-item-link" target="_newtab">
+											<img id="phone-icon" class="icon-image" alt="Phone" title="Photo" class="contact-icon" src="{% static "img/social_icons/phone-icon.png" %}"/>
+										</a>
+									</span>
+								</li>
+								<li class="contact-list-item">
+									<span>
+										<a id="email" class="contact-item-link" target="_newtab">
+											<img id="mail-icon" class="icon-image" alt="Email" title="Email" class="contact-icon" src="{% static "img/social_icons/mail-icon.png" %}"/>
+										</a>
+									</span>
+								</li>
+							</ul><!-- /contact-list -->
+						</div><!-- /contact -->
+					</div><!-- /nav-container -->
+				</div><!-- /right-header -->
+			</div><!-- header -->
+			<div class='content'>
+				<div id='writing' class='card card-spot-1'>
+					<div class='card-preview'>
+						<img class='tab-image' src='{% static 'img/tab/writing.png' %}'/>
+					</div>
+					<div class='card-display no-fade-in'>
+						<h1 class='h-center'><span>Title For Writing Sample Here</span></h1>
+						<p style='text-align: center;'>
+							What I can do can do no hurt to try,<br>
+							Since you set up your rest 'gainst remedy.<br>
+							He that of greatest works is finisher<br>
+							Oft does them by the weakest minister:<br>
+							So holy writ in babes hath judgment shown,<br>
+							When judges have been babes; great floods have flown<br>
+							From simple sources, and great seas have dried<br>
+							When miracles have by the greatest been denied.<br>
+							Oft expectation fails and most oft there<br>
+							Where most it promises, and oft it hits<br>
+							What I can do can do no hurt to try,<br>
+							Since you set up your rest 'gainst remedy.<br>
+							He that of greatest works is finisher<br>
+							Oft does them by the weakest minister:<br>
+							So holy writ in babes hath judgment shown,<br>
+							When judges have been babes; great floods have flown<br>
+							From simple sources, and great seas have dried<br>
+							When miracles have by the greatest been denied.<br>
+							Oft expectation fails and most oft there<br>
+							Where most it promises, and oft it hits<br>
+							What I can do can do no hurt to try,<br>
+							Since you set up your rest 'gainst remedy.<br>
+							He that of greatest works is finisher<br>
+							Oft does them by the weakest minister:<br>
+							So holy writ in babes hath judgment shown,<br>
+							When judges have been babes; great floods have flown<br>
+							From simple sources, and great seas have dried<br>
+							When miracles have by the greatest been denied.<br>
+							Oft expectation fails and most oft there<br>
+							Where most it promises, and oft it hits<br>
+							What I can do can do no hurt to try,<br>
+							Since you set up your rest 'gainst remedy.<br>
+							He that of greatest works is finisher<br>
+							Oft does them by the weakest minister:<br>
+							So holy writ in babes hath judgment shown,<br>
+							When judges have been babes; great floods have flown<br>
+							From simple sources, and great seas have dried<br>
+							When miracles have by the greatest been denied.<br>
+							Oft expectation fails and most oft there<br>
+							Where most it promises, and oft it hits<br>
+							What I can do can do no hurt to try,<br>
+							Since you set up your rest 'gainst remedy.<br>
+							He that of greatest works is finisher<br>
+							Oft does them by the weakest minister:<br>
+							So holy writ in babes hath judgment shown,<br>
+							When judges have been babes; great floods have flown<br>
+							From simple sources, and great seas have dried<br>
+							When miracles have by the greatest been denied.<br>
+							Oft expectation fails and most oft there<br>
+							Where most it promises, and oft it hits<br>
+							What I can do can do no hurt to try,<br>
+							Since you set up your rest 'gainst remedy.<br>
+							He that of greatest works is finisher<br>
+							Oft does them by the weakest minister:<br>
+							So holy writ in babes hath judgment shown,<br>
+							When judges have been babes; great floods have flown<br>
+							From simple sources, and great seas have dried<br>
+							When miracles have by the greatest been denied.<br>
+							Oft expectation fails and most oft there<br>
+							Where most it promises, and oft it hits<br>
+							What I can do can do no hurt to try,<br>
+							Since you set up your rest 'gainst remedy.<br>
+							He that of greatest works is finisher<br>
+							Oft does them by the weakest minister:<br>
+							So holy writ in babes hath judgment shown,<br>
+							When judges have been babes; great floods have flown<br>
+							From simple sources, and great seas have dried<br>
+							When miracles have by the greatest been denied.<br>
+							Oft expectation fails and most oft there<br>
+							Where most it promises, and oft it hits<br>
+						</p>
+					</div>
+				</div>
+				<div id='about' class='card card-spot-2'>
+					<div class='card-preview'>
+						<img class='tab-image' src='{% static 'img/tab/about.png' %}'/>
+					</div>
+					<div class='card-display no-fade-in'>
+						<h1>About Me Video Display</h1>
+					</div>
+				</div>
+				<div id='audio' class='card card-spot-3'>
+					<div class='card-preview'>
+						<img class='tab-image' src='{% static 'img/tab/audio.png' %}'/>
+					</div>
+					<div class='card-display no-fade-in v-center'>
+						<div class='h-center'>
+							<audio id='audio-player' controls>
+								<source src="{% static "audio/3_11_04_PM.mp3" %}" type="audio/mpeg">
+								<source src="{% static "audio/3_11_04_PM.ogg" %}" type="audio/ogg">
+								<embed height="50" width="100" src="{% static "audio/3_11_04_PM.mp3" %}">
+							</audio>
+						</div>
+					</div>
+				</div>
+				<div id='latest' class='card active'>
+					<div class='card-preview'>
+						<img class='tab-image' src='{% static 'img/tab/recent.png' %}'/>
+					</div>
+					<div class='card-display no-fade-in'>
+						<h1>Latest Activity Display</h1>
+						<div class='posts-container'>
+						{% for post in posts %}
+							<div class='post'>
+								<h3 class='post-title'>
+									{{ post.title }}
+								</h3>
+								<p class='post-content'>
+									{{ post.content|safe }}
+								</p>
+								<h1>
+									{{ post.date }}
+								</h1>
+							</div>
+						{% endfor %}
+						</div>
+						{% if more_posts %}
+							<button id='load button'>
+								Load more posts....
+							</button>
+						{% endif %}
+					</div>
+				</div>
+			</div><!-- /content -->
+			<div class='footer-placeholder'></div>
+			<div class='footer h-center'>
+				<div id='quote'>
+					<h1><span id='quote-text'>
+						"I had to trust life, since I was young enough to believe that life Loved the person who dared to Live it." - Maya Angelou
+					</span></h1>
+				</div>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+{% endblock %}
