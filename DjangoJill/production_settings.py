@@ -27,12 +27,12 @@ except:
 	DATABASES['default']['PASSWORD'] = ''
 	
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jillian.joeyuan.com','www.jillian.joeyuan.com']
 
 STATIC_URL = 'http://jillian.joeyuan.com/static/'
 STATIC_ROOT = '/home/joeyuan19/webapps/jill_static/'
 STATICFILES_DIRS += (
-	'',
+	'/home/joeyuan19/webapps/django_jill/DjangoJill/static',
 )
 
 EMAIL_HOST = ''
