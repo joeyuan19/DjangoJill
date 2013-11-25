@@ -14,7 +14,6 @@ finally:
 	if f:
 		f.close()
 
-print password
 
 DEBUG = TEMPLATE_DEBUG = False
 
