@@ -35,13 +35,13 @@ STATICFILES_DIRS += (
 	'/home/joeyuan19/webapps/django_jill/DjangoJill/static',
 )
 
-EMAIL_HOST = ''
-EMAIL_HOST_USER = ''
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = 'joe_inbox'
 try:
 	EMAIL_HOST_PASSWORD = password['email']
 except:
 	EMAIL_HOST_PASSWORD = ''
 
-DEFAULT_FROM_EMAIL = ''
-SERVER_EMAIL = ''
+DEFAULT_FROM_EMAIL = 'joe.yuan19@gmail.com'
+SERVER_EMAIL = 'joe@joeyuan.com'
 
