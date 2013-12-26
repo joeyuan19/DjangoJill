@@ -138,7 +138,7 @@ function init_card_UI() {
 		});
 		$('.enlarged').removeClass('enlarged').css({'z-index':'9'})
 			.animate({left:'40%',height:'100%',top:'0%',width:'60%'});
-		$('.content').css({'z-index':'2'});
+		$('.content').css({'z-index':'1'});
 	});
 	cards.each(function() {
 		$(this).click(
