@@ -56,7 +56,7 @@ USE_TZ = True
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = PROJECT_ROOT+'/media/'
 if not os.path.exists(MEDIA_ROOT+'/uploads/'):
-	    os.makedirs(MEDIA_ROOT+'/uploads/')
+	os.makedirs(MEDIA_ROOT+'/uploads/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -193,13 +193,22 @@ LOGGING = {
 
 # TinyMCE settings
 TINYMCE_DEFAULT_CONFIG = {
-		    'plugins': "",
-			'theme': "advanced",
-			'cleanup_on_startup': True,
-			'custom_undo_redo_levels': 10,
+	'plugins': "",
+	'resize':"vertical",
+	'theme': "advanced",
+	'height': '500',
+	'cleanup_on_startup': True,
+	'custom_undo_redo_levels': 10,
+	'document_base_url': PROJECT_ROOT,
+	'relative_urls' : False,
+	'remove_script_host' : False,
+	'convert_urls' : True,
 }
 
 
+FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT
+FILEBROWSER_MEDIA_URL = '/media/'
+FILEBROWSER_DIRECTORY = 'uploads/'
 
 BACKEND = "django.core.cache.backends.memcached.MemcachedCache"
 

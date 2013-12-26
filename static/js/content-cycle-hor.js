@@ -1,8 +1,6 @@
 function pauseAudio() {
 	document.getElementById('audio-player').pause();
 }
-
-
 function set_new_card(id) {
 	// old active -> spot 1
 	// shift inactives by one
@@ -124,10 +122,41 @@ function set_new_card(id) {
 			}
 		).animate({top:0,height:active_height},duration/2);
 	}
+	return;
 }
 
+function init_card_UI() {
+	var duration = 500;
+	cards = $(".card");
+	$('#overlay').css({'top':'0px','left':'0px','width':$(window).width()+'px','height':$(window).height()+'px'})
+	window.addEventListener('resize',function() {
+		$('#overlay').css({'top':'0px','left':'0px','width':$(window).width()+'px','height':$(window).height()+'px'})
+	});
+	$('#overlay').click(function() {
+		$(this).animate({opacity:0},duration,function() {
+			$(this).removeClass('overlay-show').addClass('overlay-hide');
+		});
+		$('.enlarged').removeClass('enlarged').css({'z-index':'9'})
+			.animate({left:'40%',height:'100%',top:'0%',width:'60%'});
+		$('.content').css({'z-index':'2'});
+	});
+	cards.each(function() {
+		$(this).click(
+			function() {
+				if ($(this).hasClass('active') && !$(this).hasClass('enlarged')) {
+					$('.content').css({'z-index':'5'});
+					$(this).addClass('enlarged').css({'z-index':'101'});
+					$('#overlay').removeClass('overlay-hide').addClass('overlay-show');
+					$(this).animate({left:'5%',width:'90%',height:'90%',top:'5%'},duration);
+					$('#overlay').animate({opacity:.6},duration);
+				}
+			}
+		);
+	});
+}
 
 function init_cards() {
+	init_card_UI();
 	var cards = $(".card"), i, itr = 0, elm;
 	for (i = 0; i < cards.length; i++) {
 		elm = $(cards[i]);
@@ -151,6 +180,7 @@ function init_cards() {
 			itr++;
 		}
 	}
+	return;
 }
 
 

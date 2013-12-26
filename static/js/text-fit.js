@@ -6,8 +6,9 @@ function resizeFont() {
 
 $.fn.scaleFont = function(){
 	var elm_parent = $(this).parent();
-	var height = elm_parent.height();
-	$(this).css('font-size',height*.9 + 'px');
+	var height = elm_parent.height(),
+		width = elm_parent.width();
+	$(this).css('font-size',height*.7 + 'px');
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * 
