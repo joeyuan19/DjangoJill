@@ -1,17 +1,48 @@
-{% extends "base.html" %}
+{% extends "content_base.html" %}
 {% load staticfiles %}
 
+{% block 'title' %}
+	<title>Jillian Entenman - Resume</title>
+{% endblock %}
+
 {% block 'header_styles' %}
-	<link href="/static/css/style_sheet.css" rel="stylesheet" media="all" />
+	<link href="/static/css/resume_style_sheet.css" rel="stylesheet" media="all"/>
 {% endblock %}
 
 {% block 'header_scripts' %}
-	<script type="text/javascript" src="{% static "js/fade-in.js" %}"></script>
+	<script type="text/javascript" src="{% static 'js/resume-UI.js' %}"></script>
 {% endblock %}
+
+{% block 'bg_image' %}
+	<img id='main-bg' class='bg-image' src='http://imgsrc.hubblesite.org/hu/db/images/hs-2003-13-a-large_web.jpg' alt='A Perfect Storm of Turbulent Gases in the Omega/Swan Nebula (M17)' /><span class='source-ref'>Source: <a class='source-link' href='http://hubblesite.org'>Hubblesite.org</a></span>
+{% endblock %}
+
+{% block 'nav_image' %}
+	<img src="{% static 'img/headshot/img1.jpg' %}" class='headshot-icon'/>
+{% endblock %}
+
+{% block 'nav-resume' %}{% endblock %}
 
 {% block 'content' %}
-	<img id='main-bg' class='bg-image' src='http://imgsrc.hubblesite.org/hu/db/images/hs-2003-13-a-large_web.jpg' alt='A Perfect Storm of Turbulent Gases in the Omega/Swan Nebula (M17)' /><span class='source-ref'>Source: <a class='source-link' href='http://hubblesite.org'>Hubblesite.org</a></span>
-	<h1><a href="{% url "homepage" %}">RESUME CONTENT</a></h1>
+	<div class="res-chooser">
+		<img src="{% static 'img/icons/doc.png' %}" class='res-chooser-icon resize-icon'/>
+		<h1 class="res-chooser-label resize-label">Viewing: <span class="res-choice">Acting</span> Resume</h1>
+		<div class="res-chooser-btn resize-label">&darr;&nbsp;Select</div>
+	</div>
+	<div class="res-chooser-list">
+		<div name="Acting" class="res-chooser-list-option active">
+			<span class="resize-label">Acting Resume</span>
+		</div>
+		<div name="Industry" class="res-chooser-list-option">
+			<span class="resize-label">Industry Resume</span>
+		</div>
+	</div>
+	<div class="res-display">
+		<div id="Acting" class='pdf-display-container'>
+			<object class='pdf-display active' data="{% static 'pdf/Resume.pdf' %}" type="application/pdf"></object>
+		</div>
+		<div id="Industry" class='pdf-display-container'>
+			<object class='pdf-display' data="{% static 'pdf/Industry_Resume.pdf' %}" type="application/pdf"></object>
+		</div>
+	</div>
 {% endblock %}
-
-

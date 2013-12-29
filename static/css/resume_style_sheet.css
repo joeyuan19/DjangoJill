@@ -1,0 +1,57 @@
+.res-chooser {
+	height: 10%;
+	padding: 5px;
+	overflow: hidden;
+	z-index: 1;
+}
+.res-chooser > * {
+	float: left;
+}
+.res-chooser-icon {
+	max-width: 5%;
+}
+.res-chooser-label {
+	padding-left: 5px;
+	margin-left: 5px;
+}
+.res-chooser-btn {
+	text-align: center;
+	border: 1px solid black;
+	height: 100%;
+	float: right;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.res-chooser-list {
+	position: fixed;
+	height: 0;
+	z-index: 3;
+	opacity: 0;
+	overflow: hidden;
+}
+.res-chooser-list-option {
+	background: white;
+	border: 1px solid black;
+}
+.res-chooser-list-option.active {
+	background: yellow;
+}
+.res-display {
+	overflow: hidden;
+	height: 100%;
+	z-index: 2;
+}
+.pdf-display {
+	height: 90%;
+	width: 100%;
+	opacity: 0;
+	display: none;
+}
+.pdf-display-container {
+	height: 90%;
+	width: 100%;
+}
+.active {
+	opacity: 1;
+	display: block;
+}

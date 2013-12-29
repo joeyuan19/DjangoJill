@@ -12,6 +12,11 @@ function resize_contact() {
 	} 
 }
 
+function resize_quote() {
+	var elm = $('#quote-text');
+	console.log(elm.width() + " " + elm.parent().width());
+}
+
 function resize_all() {
 	resize_contact();
 }

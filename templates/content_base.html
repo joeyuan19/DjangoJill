@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+	<head>
+		{% block 'title' %}
+			<title>Jillian Entenman</title>
+		{% endblock %}
+		<meta name="viewport" content="width=device-width initial-scale=1.0">
+		<meta name="keywords" content="Jillian, Entenman, Jillian Entenman, Acting, Directing, Production, Writing">
+		<meta name="description" content="Jillian Entenman, an actress, writer, director, and producer from Chicago, living and working now in New York City">
+		
+		<!-- Scripts -->
+		<script type="text/javascript" src="{% static "js/jquery-1.10.2.min.js" %}"></script>
+		<script type="text/javascript" src="{% static 'js/fade-in.js' %}"></script>
+		<!-- block for extra scripts -->
+		{% block 'header_scripts' %}
+		{% endblock %}
+
+		<!-- Default Style Sheets -->
+		<link href="/static/css/content_style_sheet.css" rel="stylesheet" media="all"/>
+		
+		<!-- block for extra style sheets -->
+		{% block 'header_styles' %}
+		{% endblock %}
+	</head>
+	<body>
+		{% block 'bg_image' %}
+		{% endblock %}
+		<div id='page'>
+			<div id='nav'>
+			{% block 'nav_image' %}
+				<img src="{% static 'img/headshot/img1.jpg' %}" class='headshot-icon'/>
+			{% endblock %}
+				<h1>Resume</h1>
+				<div class='nav-btn'> 
+					<a href="{% url "homepage" %}">
+						<img class='nav-btn-icon' src='{% static 'img/icons/home.png' %}'/>
+						<h1 class='nav-btn-label'>Home</h1>
+					</a>
+				</div>
+			{% block 'nav-resume' %}
+				<div class='nav-btn'> 
+					<a href="{% url "resume" %}">
+						<img class='nav-btn-icon' src='{% static 'img/icons/doc.png' %}'/>
+						<h1 class='nav-btn-label'>Resume</h1>
+					</a>
+				</div>
+			{% endblock %}
+			{% block 'nav-headshots' %}
+				<div class='nav-btn'> 
+					<a href="{% url "headshots" %}">
+						<img class='nav-btn-icon' src='{% static 'img/icons/headshots.png' %}'/>
+						<h1 class='nav-btn-label'>Headshots</h1>
+					</a>
+				</div>
+			{% endblock %}
+			{% block 'nav-production' %}
+				<div class='nav-btn'> 
+					<a href="{% url "production" %}">
+						<img class='nav-btn-icon' src='{% static 'img/icons/photo.png' %}'/>
+						<h1 class='nav-btn-label'>Production Photos</h1>
+					</a>
+				</div>
+			{% endblock %}
+			{% block 'nav-video' %}
+				<div class='nav-btn'> 
+					<a href="{% url "video" %}">
+						<img class='nav-btn-icon' src='{% static 'img/icons/video.png' %}'/>
+						<h1 class='nav-btn-label'>Video</h1>
+					</a>
+				</div>
+			{% endblock %}
+		</div>
+		<div id='content'>		
+			{% block 'content' %}
+				<p>
+					404 - No Content Found!
+				</p>
+			{% endblock %}
+		</div>
+	</body>
+</html>
+
+
+
+

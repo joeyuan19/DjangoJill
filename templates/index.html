@@ -22,10 +22,9 @@
 			<div class='header'>
 				<div id='left-header' class='header-container left'>
 					<div id='picture' class='slideshow'>
-						<!--<img id="img1" class='slideshow-image no-fade-in' src="{% static "img/headshot/img1.jpg" %}"/>-->
-						<img id="img2" class='slideshow-image no-fade-in' src="{% static "img/headshot/img2.jpg" %}"/>
-						<img id="img3" class='slideshow-image no-fade-in' src="{% static "img/headshot/img3.jpg" %}"/>
-						<img id="img4" class='slideshow-image no-fade-in' src="{% static "img/headshot/img4.jpg" %}"/>
+						<img id="img1" class='slideshow-image no-fade-in' src="{% static "img/headshot/img2.jpg" %}"/>
+						<img id="img2" class='slideshow-image no-fade-in' src="{% static "img/headshot/img3.jpg" %}"/>
+						<img id="img3" class='slideshow-image no-fade-in' src="{% static "img/headshot/img4.jpg" %}"/>
 					</div>
 				</div><!-- left-header -->
 				<div id='right-header' class='header-container right'>
@@ -56,42 +55,42 @@
 								<li class="contact-list-item">
 									<span>
 										<a id="ig" class="contact-item-link" href="http://instagram.com/jillibrown" target="_newtab">
-											<img id="ig-icon" class="icon-image" alt="Instagram" title="Instagram" class="contact-icon" src="{% static "img/social_icons/ig-icon.png" %}"/>
+											<img id="ig-icon" class="icon-image grayscale" alt="Instagram" title="Instagram" class="contact-icon" src="{% static "img/social_icons/ig-icon.png" %}"/>
 										</a>
 									</span>
 								</li>
 								<li class="contact-list-item">
 									<span>
 										<a id="fb" class="contact-item-link" href="https://www.facebook.com/jillian.entenman" target="_newtab">
-											<img id="fb-icon" class="icon-image" alt="facebook" title="facebook" src="{% static "img/social_icons/fb-icon.png" %}"/>
+											<img id="fb-icon" class="icon-image grayscale" alt="facebook" title="facebook" src="{% static "img/social_icons/fb-icon.png" %}"/>
 										</a>
 									</span>
 								</li>
 								<li class="contact-list-item">
 									<span>
 										<a id="tw" class="contact-item-link" href="https://twitter.com/jillibrown" target="_newtab">
-											<img id="tw-icon" class="icon-image" alt="Twitter" title="Twitter" class="contact-icon" src="{% static "img/social_icons/tw-icon.png" %}"/>
+											<img id="tw-icon" class="icon-image grayscale" alt="Twitter" title="Twitter" class="contact-icon" src="{% static "img/social_icons/tw-icon.png" %}"/>
 										</a>
 									</span>
 								</li>
 								<li class="contact-list-item">
 									<span>
 										<a id="bs" class="contact-item-link" href="https://www.backstage.com/jillianentenman/" target="_newtab">
-											<img id="bs-icon" class="icon-image" alt="Backstage" title="Backstage" class="contact-icon" src="{% static "img/social_icons/bs-icon.png" %}"/>
+											<img id="bs-icon" class="icon-image grayscale" alt="Backstage" title="Backstage" class="contact-icon" src="{% static "img/social_icons/bs-icon.png" %}"/>
 										</a>
 									</span>
 								</li>
 								<li class="contact-list-item">
 									<span>
 										<a id="phone" class="contact-item-link" target="_newtab">
-											<img id="phone-icon" class="icon-image" alt="Phone" title="Photo" class="contact-icon" src="{% static "img/social_icons/phone-icon.png" %}"/>
+											<img id="phone-icon" class="icon-image grayscale" alt="Phone" title="Photo" class="contact-icon" src="{% static "img/social_icons/phone-icon.png" %}"/>
 										</a>
 									</span>
 								</li>
 								<li class="contact-list-item">
 									<span>
 										<a id="email" class="contact-item-link" target="_newtab">
-											<img id="mail-icon" class="icon-image" alt="Email" title="Email" class="contact-icon" src="{% static "img/social_icons/mail-icon.png" %}"/>
+											<img id="mail-icon" class="icon-image grayscale" alt="Email" title="Email" class="contact-icon" src="{% static "img/social_icons/mail-icon.png" %}"/>
 										</a>
 									</span>
 								</li>
@@ -104,26 +103,28 @@
 				<div id="overlay" class='overlay overlay-hide no-fade-in'>&nbsp;</div>
 				<div id='writing' class='card card-spot-1'>
 					<div class='card-preview'>
-						<img class='tab-image' src='{% static 'img/tab/writing.png' %}'/>
+						<img class='tab-image grayscale' src='{% static 'img/tab/writing.png' %}'/>
 					</div>
 					<div class='card-display no-fade-in'>
-						<button id='display-shrink'></button>
+						<button class='card-resize-btn no-fade-in'>Shrink</button>
 						{% include 'writing_sample.html' %}
 					</div>
 				</div>
 				<div id='about' class='card card-spot-2'>
 					<div class='card-preview'>
-						<img class='tab-image' src='{% static 'img/tab/about.png' %}'/>
+						<img class='tab-image grayscale' src='{% static 'img/tab/about.png' %}'/>
 					</div>
 					<div class='card-display no-fade-in'>
+						<button class='card-resize-btn no-fade-in'>Shrink</button>
 						<h1>About Me Video Display</h1>
 					</div>
 				</div>
 				<div id='audio' class='card card-spot-3'>
 					<div class='card-preview'>
-						<img class='tab-image' src='{% static 'img/tab/audio.png' %}'/>
+						<img class='tab-image grayscale' src='{% static 'img/tab/audio.png' %}'/>
 					</div>
 					<div class='card-display no-fade-in v-center'>
+						<button class='card-resize-btn no-fade-in'>Shrink</button>
 						<div class='h-center'>
 							<audio id='audio-player' controls>
 								<source src="{% static "audio/3_11_04_PM.mp3" %}" type="audio/mpeg">
@@ -135,9 +136,10 @@
 				</div>
 				<div id='latest' class='card active'>
 					<div class='card-preview'>
-						<img class='tab-image' src='{% static 'img/tab/recent.png' %}'/>
+						<img class='tab-image grayscale' src='{% static 'img/tab/recent.png' %}'/>
 					</div>
 					<div class='card-display no-fade-in'>
+						<button class='card-resize-btn no-fade-in'>Shrink</button>
 						<h1>Latest Activity Display</h1>
 						<div class='posts-container'>
 						{% for post in posts %}
@@ -165,7 +167,7 @@
 			<div class='footer-placeholder'></div>
 			<div class='footer h-center'>
 				<div id='quote'>
-					<h1><span id='quote-text'>
+					<h1><span id='quote-text' class='text-fit-single'>
 						"I had to trust life, since I was young enough to believe that life Loved the person who dared to Live it." - Maya Angelou
 					</span></h1>
 				</div>

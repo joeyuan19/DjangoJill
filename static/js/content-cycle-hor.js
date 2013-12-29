@@ -132,22 +132,44 @@ function init_card_UI() {
 	window.addEventListener('resize',function() {
 		$('#overlay').css({'top':'0px','left':'0px','width':$(window).width()+'px','height':$(window).height()+'px'})
 	});
-	$('#overlay').click(function() {
-		$(this).animate({opacity:0},duration,function() {
+	$('#overlay, .card-resize-btn').click(function() {
+		var overlay = $(this).attr('id') == 'overlay' ? $(this) : $('#overlay');
+		overlay.animate({opacity:0},duration,function() {
 			$(this).removeClass('overlay-show').addClass('overlay-hide');
 			$('.content').css({'z-index':'1'});
 		});
-		$('.enlarged').removeClass('enlarged').css({'z-index':'9'})
-			.animate({left:'40%',height:'100%',top:'0%',width:'60%'});
+		$('.enlarged').animate({
+			left:'40%',
+			height:$('.content').height(),
+			top:parseFloat($('.content').offset().top - $(window).scrollTop()),
+			width:'60%'},
+			duration,
+			function() {
+				$(this).removeClass('enlarged').css({'z-index':'9','top':'0px'}); 
+			}
+		);
+		$('.enlarged .card-resize-btn').animate({opacity:0},duration,function() {$(this).css({'display':'none'});});
 	});
+	$('.pdf-viewer');
 	cards.each(function() {
 		$(this).click(
 			function() {
 				if ($(this).hasClass('active') && !$(this).hasClass('enlarged')) {
+					$('.active .card-resize-btn').css({'display':'block'}).animate({opacity:1},duration);
 					$('.content').css({'z-index':'5'});
-					$(this).addClass('enlarged').css({'z-index':'101'});
+					var _width  = $(this).css('width'), 
+						_height = $(this).css('height'),
+						_left   = $(this).offset().left,
+						_top    = $(this).offset().top - $(window).scrollTop();
+					$(this).addClass('enlarged').css({
+						'z-index':'101',
+						'width':_width,
+						'height':_height,
+						'top':_top,
+						'left':_left
+					});
 					$('#overlay').removeClass('overlay-hide').addClass('overlay-show');
-					$(this).animate({left:'5%',width:'90%',height:'90%',top:'5%'},duration);
+					$(this).animate({left:'2%',width:'100%',height:'95%',top:'3%'},duration);
 					$('#overlay').animate({opacity:.6},duration);
 				}
 			}
