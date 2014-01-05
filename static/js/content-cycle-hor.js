@@ -6,7 +6,7 @@ function set_new_card(id) {
 	// shift inactives by one
 	// new active -> display
 	var active_left = '40%',
-		inactive_height = '20%',
+		inactive_height = '18%',
 		active_height = '100%',
 		inactive_width = '30%',
 		active_width = '60%',
@@ -150,7 +150,6 @@ function init_card_UI() {
 		);
 		$('.enlarged .card-resize-btn').animate({opacity:0},duration,function() {$(this).css({'display':'none'});});
 	});
-	$('.pdf-viewer');
 	cards.each(function() {
 		$(this).click(
 			function() {
@@ -183,22 +182,22 @@ function init_cards() {
 	for (i = 0; i < cards.length; i++) {
 		elm = $(cards[i]);
 		if (elm.hasClass('active')) {
-			elm.css('left','40%');
-			elm.css('top','0%');
-			elm.css('width','60%');
-			elm.css('height','100%');
+			elm.css({'left':'40%'});
+			elm.css({'top':'0%'});
+			elm.css({'width':'60%'});
+			elm.css({'height':'100%'});
 			elm.children(".card-preview").animate({opacity:0},function() {
-				$(this).css('z-index','2');
+				$(this).css({'z-index':'2'});
 			});
 			elm.children(".card-display").animate({opacity:1},function() {
-				$(this).css('z-index','3');
+				$(this).css({'z-index':'3'});
 			});
 		} else {
-			elm.css('top',(40 + itr*20) + '%');
-			elm.css('left','5%');
-			elm.css('width','30%');
-			elm.children(".card-preview").css('z-index','3');
-			elm.children(".card-display").css('z-index','2');
+			elm.css({'top':(40 + itr*20) + '%'});
+			elm.css({'left':'5%'});
+			elm.css({'width':'30%'});
+			elm.children(".card-preview").css({'z-index':'3'});
+			elm.children(".card-display").css({'z-index':'2'});
 			itr++;
 		}
 	}

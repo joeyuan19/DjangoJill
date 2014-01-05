@@ -34,18 +34,23 @@
 					<div id='nav-container'>
 						<div class='nav-bar left'>
 							<div class='nav-bar-row'>
-								<div class='nav-btn h-center'>
-									<a href='{% url 'resume' %}'><span>Resume</span></a>
+								<div class='nav-btn'>
+									<a href='{% url 'resume' %}'>
+										<img class='nav-icon' src='{% static 'img/icons/doc.png' %}'/>
+										<span class='nav-label'>Resume</span>
+									</a>
 								</div>
-								<div class='nav-btn h-center'>
-									<a href='{% url 'video' %}'><span>Video</span></a>
+								<div class='nav-btn'>
+									<a class='nav-btn-link' href='{% url 'video' %}'>
+										<img class='nav-icon' src='{% static 'img/icons/video.png' %}'/><span class='nav-label'>Video</span>
+									</a>
 								</div>
 							</div>
 							<div class='nav-bar-row'>
-								<div class='nav-btn h-center'>
+								<div class='nav-btn'>
 									<a href='{% url 'headshots' %}'><span>Headshots</span></a>
 								</div>
-								<div class='nav-btn h-center'>
+								<div class='nav-btn'>
 									<a href='{% url 'production' %}'><span>Production&nbsp;Photos</span></a>
 								</div>
 							</div>
@@ -103,43 +108,44 @@
 				<div id="overlay" class='overlay overlay-hide no-fade-in'>&nbsp;</div>
 				<div id='writing' class='card card-spot-1'>
 					<div class='card-preview'>
-						<img class='tab-image grayscale' src='{% static 'img/tab/writing.png' %}'/>
+						<span class='card-preview-label'>Writing</span>
 					</div>
+					<div class='card-placeholder'></div>
 					<div class='card-display no-fade-in'>
-						<button class='card-resize-btn no-fade-in'>Shrink</button>
+						<div class='card-resize-btn no-fade-in'><img class='close-icon' src='{% static 'img/icons/close.png' %}'/></div>
 						{% include 'writing_sample.html' %}
 					</div>
 				</div>
 				<div id='about' class='card card-spot-2'>
 					<div class='card-preview'>
-						<img class='tab-image grayscale' src='{% static 'img/tab/about.png' %}'/>
+						<span class='card-preview-label'>About Me</span>
 					</div>
 					<div class='card-display no-fade-in'>
-						<button class='card-resize-btn no-fade-in'>Shrink</button>
+						<div class='card-resize-btn no-fade-in'><img class='close-icon' src='{% static 'img/icons/close.png' %}'/></div>
 						<h1>About Me Video Display</h1>
 					</div>
 				</div>
 				<div id='audio' class='card card-spot-3'>
 					<div class='card-preview'>
-						<img class='tab-image grayscale' src='{% static 'img/tab/audio.png' %}'/>
+						<span class='card-preview-label'>Audio</span>
 					</div>
 					<div class='card-display no-fade-in v-center'>
-						<button class='card-resize-btn no-fade-in'>Shrink</button>
+						<div class='card-resize-btn no-fade-in'><img class='close-icon' src='{% static 'img/icons/close.png' %}'/></div>
 						<div class='h-center'>
 							<audio id='audio-player' controls>
-								<source src="{% static "audio/3_11_04_PM.mp3" %}" type="audio/mpeg">
-								<source src="{% static "audio/3_11_04_PM.ogg" %}" type="audio/ogg">
-								<embed height="50" width="100" src="{% static "audio/3_11_04_PM.mp3" %}">
+								<source src="{% static "audio/audio_sample.mp3" %}" type="audio/mpeg">
+								<source src="{% static "audio/audio_sample.ogg" %}" type="audio/ogg">
+								<embed height="50" width="100" src="{% static "audio/audio_sample.mp3" %}">
 							</audio>
 						</div>
 					</div>
 				</div>
 				<div id='latest' class='card active'>
-					<div class='card-preview'>
-						<img class='tab-image grayscale' src='{% static 'img/tab/recent.png' %}'/>
+					<div class='card-preview no-fade-in'>
+						<span class='card-preview-label'>Latest Activity</span>
 					</div>
-					<div class='card-display no-fade-in'>
-						<button class='card-resize-btn no-fade-in'>Shrink</button>
+					<div class='card-display'>
+						<div class='card-resize-btn no-fade-in'><img class='close-icon' src='{% static 'img/icons/close.png' %}'/></div>
 						<h1>Latest Activity Display</h1>
 						<div class='posts-container'>
 						{% for post in posts %}

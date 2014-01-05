@@ -2,6 +2,14 @@ function resizeFont() {
 	$('.text-fit').each(function() {
 		$(this).scaleFont();
 	});
+	resizeFontToLabel();
+}
+function resizeFontToLabel() {
+	$('.nav-btn .nav-label').each(function() {
+		$(this).css({
+			'font-size':.9*$(this).prev().outerHeight()+'px',
+		});
+	});
 }
 $.fn.fitTextToSingleLine = function() {
 	var _width = $(this).width(),
