@@ -51,7 +51,10 @@
 									<a href='{% url 'headshots' %}'><span>Headshots</span></a>
 								</div>
 								<div class='nav-btn'>
-									<a href='{% url 'production' %}'><span>Production&nbsp;Photos</span></a>
+                                    <a href='{% url 'production' %}'>
+                                        <img class='nav-icon' src='{% static 'img/icons/prod.png' %}'/>
+                                        <span>Production&nbsp;Photos</span>
+                                    </a>
 								</div>
 							</div>
 						</div><!-- /nav-bar -->
@@ -131,7 +134,8 @@
 					</div>
 					<div class='card-display no-fade-in v-center'>
 						<div class='card-resize-btn no-fade-in'><img class='close-icon' src='{% static 'img/icons/close.png' %}'/></div>
-						<div class='h-center'>
+						<div class='h-center'> 
+							<h1 class='card-title'>Audio Sample</h1>
 							<audio id='audio-player' controls>
 								<source src="{% static "audio/audio_sample.mp3" %}" type="audio/mpeg">
 								<source src="{% static "audio/audio_sample.ogg" %}" type="audio/ogg">
@@ -146,19 +150,19 @@
 					</div>
 					<div class='card-display'>
 						<div class='card-resize-btn no-fade-in'><img class='close-icon' src='{% static 'img/icons/close.png' %}'/></div>
-						<h1>Latest Activity Display</h1>
+						<h1 class='card-title'>Latest Activity Display</h1>
 						<div class='posts-container'>
 						{% for post in posts %}
 							<div class='post'>
-								<h3 class='post-title'>
+								<div class='post-title'>
 									{{ post.title }}
-								</h3>
-								<p class='post-content'>
+								</div>
+								<div class='post-content'>
 									{{ post.content|safe }}
-								</p>
-								<h1>
+								</div>
+								<div class='post-date'>
 									{{ post.date }}
-								</h1>
+								</div>
 							</div>
 						{% endfor %}
 						</div>

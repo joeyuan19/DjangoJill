@@ -236,12 +236,12 @@ a {
 	color: yellow;
 }
 .card-preview > .card-preview-label {
-	top: 15%;
+	top: 13%;
 }
 .card-resize-btn {
-	position: absolute;
-	left: 95%;
-	top: 10px;
+	position: fixed;
+	left: 96%;
+	top: 5%;
 	opacity: 0;
 	z-index: 10;
 }
@@ -264,6 +264,20 @@ a {
 	opacity: 1;
 	width: 100%;
 	height: 95%;
+}
+
+.post {
+}
+.post-title {
+	font-size: 200%;
+	border-bottom: 1px solid gray;
+}
+.post-content {
+	font-size: 100%;
+	border-bottom: 1px solid gray;
+}
+.post-date {
+	font-style: italic;
 }
 
 

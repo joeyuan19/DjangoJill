@@ -31,11 +31,13 @@
 	overflow: hidden;
 }
 .res-chooser-list-option {
-	background: white;
+	color: white;
+	background-color: rgba(25,25,25,0.5);
 	border: 1px solid black;
 }
 .res-chooser-list-option.active {
-	background: yellow;
+	color: black;
+	background-color: rgba(255,255,0,0.5);
 }
 .res-display {
 	overflow: hidden;
