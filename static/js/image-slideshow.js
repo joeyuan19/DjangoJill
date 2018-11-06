@@ -1,5 +1,5 @@
 function slideShow(i) {
-	var next_i, num_images = 4;
+	var next_i, num_images = $('.slideshow-image').length;
 	if (i < num_images) {
 		next_i = i + 1;
 	} else {

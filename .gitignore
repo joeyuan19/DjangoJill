@@ -2,7 +2,11 @@ extras/*
 assets/*
 media/uploads/*
 static/mov/*
+Jillian_Site/static/mov/*
 *.swp
+
+**.mov
+
 
 # Compiled source #
 ###################
@@ -43,6 +47,5 @@ static/mov/*
 ._*
 .Spotlight-V100
 .Trashes
-Icon?
 ehthumbs.db
 Thumbs.db

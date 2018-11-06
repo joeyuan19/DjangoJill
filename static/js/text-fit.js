@@ -2,27 +2,47 @@ function resizeFont() {
 	$('.text-fit').each(function() {
 		$(this).scaleFont();
 	});
+	resizeFontToLabel();
 }
-
+function resizeFontToLabel() {
+	$('.nav-btn .nav-label').each(function() {
+		$(this).css({
+			'font-size':.9*$(this).prev().outerHeight()+'px',
+		});
+	});
+}
+$.fn.fitTextToSingleLine = function() {
+	var _width = $(this).width(),
+		width  = $(this).parent().width();
+	var x = parseInt($(this).css('font-size'));
+	if (width > _width) {
+		if (_width/width > 0.9) {
+			return;
+		}
+		while (width > _width) {
+			x += 1;
+			$(this).css('font-size',x+'px');
+			_width = $(this).width();
+			if (x > 40) {
+				break;
+			}
+		}
+	} else {
+		while (_width > width) {
+			x -= 1;
+			$(this).css('font-size',x+'px');
+			_width = $(this).width();
+			if (x < 12) {
+				break;
+			}
+		}
+	}
+}
 $.fn.scaleFont = function(){
 	var elm_parent = $(this).parent();
 	var height = elm_parent.height(),
 		width = elm_parent.width();
 	$(this).css('font-size',height*.7 + 'px');
 }
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * 
- * Credit to: http://stackoverflow.com/questions/1582534/calculating-text-width-with-jquery
- * * * * * * * * * * * * * * * * * * * * * * * * * * */
-$.fn.textWidth = function(){
-	var html_org = $(this).html();
-	var html_calc = '<span>' + html_org + '</span>';
-	$(this).html(html_calc);
-	var width = $(this).find('span:first').width();
-	$(this).html(html_org);
-	return width;
-};
-
 window.addEventListener('load', resizeFont);
-window.addEventListener('resize', resizeFont);
-
+window.addEventListener('resize',resizeFont);

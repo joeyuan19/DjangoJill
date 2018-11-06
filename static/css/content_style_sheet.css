@@ -1,0 +1,89 @@
+html, body, div, img, a, span, audio, video, p, h1, h2, h3, h4, h5, h6, link, script, meta, title, ul, ol, li, br 
+{
+	position: relative;
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	font-family: verdana, serif;
+}
+html {
+	background: black;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+body * {
+	opacity: 0;
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+a:hover {
+	color: #CCC;
+}
+a:visted {
+	color: red;
+}
+#main-bg {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	max-height: 100%;
+	max-width: 100%;
+	min-width: 1200px;
+	min-height: 575px;
+	z-index: -5;
+}
+.bg-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.source-ref {
+	position: fixed;
+	bottom: 0px;
+	font-size: 100%;
+	color: #686868;
+	font-style: italic;
+	z-index: 10;
+}
+.source-link {
+	color: #686868;
+	font-style: italic;
+}
+#nav {
+	width: 20%;
+	float: left;
+}
+#content {
+	width: 80%;
+	height: 100%;
+	float: left;
+}
+#page {
+	min-width: 1200px;
+	min-height: 575px;
+	overflow: hidden;
+	z-index: 1;
+}
+.headshot-icon {
+	max-width: 100%;	
+}
+.nav-btn {
+	overflow: hidden;
+}
+.nav-btn-icon {
+	max-height: 25px;
+	padding-top: 5px;
+	margin-left: 5px;
+	float: left;
+}
+.nav-btn-label {
+	font-size: 30px;
+	margin-left: 5px;
+	float: left;
+}
+.nav-btn:hover {	
+}

@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<style>		
+			.a {
+				position: absolute;
+				background: yellow;
+				z-index: 100;
+				width: 500px;
+				height: 500px;
+			}
+			.b {
+				position: absolute;
+				background: red;
+				z-index: -1;
+				width: 300px;
+				height: 300px;
+			}
+			.c {
+				position: absolute;
+				background: blue;
+				z-index: 1;
+				width: 200px;
+				height: 200px;
+			}
+			.d {
+				position: absolute;
+				background: green;
+				z-index: 2;
+				width: 100px;
+				height: 100px;
+			}
+			.e {
+				position: absolute;
+				background: #A0A;
+				z-index: -2;
+				width: 400px;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='a'>
+			z-index 100
+			<div class='e'>	
+				z-index -2
+				<div class='b'>
+					z-index -1 
+					<div class='c'>	
+						z-index 1 
+						<div class='d'>	
+							z-index 2
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
